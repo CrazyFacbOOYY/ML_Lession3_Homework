@@ -97,7 +97,7 @@ def plot_width_comparison(results):
     # test accuracy
     for name in names:
         ax1.plot(results[name]['history']['test_accs'], label=name)
-    ax1.set_title('Test Accuracy')
+    ax1.set_title('Тесты на Accuracy')
     ax1.set_xlabel('Эпоха')
     ax1.legend()
     ax1.grid(True)
@@ -105,7 +105,7 @@ def plot_width_comparison(results):
     # test loss
     for name in names:
         ax2.plot(results[name]['history']['test_losses'], label=name)
-    ax2.set_title('Test Loss')
+    ax2.set_title('Тесты на Loss')
     ax2.set_xlabel('Эпоха')
     ax2.legend()
     ax2.grid(True)
@@ -117,7 +117,7 @@ def plot_width_comparison(results):
     for i, name in enumerate(names):
         ax3.annotate(name, (params[i], accs[i]), xytext=(5, 5), textcoords='offset points')
     ax3.set_xlabel('Параметры')
-    ax3.set_ylabel('Test Accuracy')
+    ax3.set_ylabel('Тесты на Accuracy')
     ax3.set_title('Parameters vs Accuracy')
     ax3.grid(True)
     
@@ -221,7 +221,7 @@ def optimize_architecture():
                     color='lightcoral', alpha=0.7)
     
     ax.set_xlabel('Архитектура')
-    ax.set_ylabel('Accuracy')
+    ax.set_ylabel('Точность')
     ax2.set_ylabel('Параметры (тыс.)')
     ax.set_title('ArchitectureComparison')
     ax.set_xticks(x)
@@ -238,7 +238,7 @@ def optimize_architecture():
     ax.legend(lines1 + lines2, labels1 + labels2, loc='upper left')
     
     plt.tight_layout()
-    plt.savefig('plots/architecture_optimization.png', dpi=150)
+    plt.savefig('plots/architectureOptimization.png', dpi=150)
     plt.show()
     
     # поиск лучшей архитектуры

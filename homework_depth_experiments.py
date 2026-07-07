@@ -142,7 +142,7 @@ def run_depth_experiments():
     
     return results
 
-def run_depth_with_regularization(): # с регуляризацией
+def run_depth_analysis(): # с регуляризацией
     train_loader, test_loader = get_mnist_loaders(batch_size=64)
     
     # 5 слоев
@@ -250,9 +250,9 @@ def run_depth_with_regularization(): # с регуляризацией
     ax2.legend()
     ax2.grid(True)
     
-    plt.suptitle('RegularizationForDeep')
+    plt.suptitle('Depth Analysis')
     plt.tight_layout()
-    plt.savefig('plots/regularizationForDeep.png', dpi=150)
+    plt.savefig('plots/debthAnalysis.png', dpi=150)
     plt.show()
     
     return results
@@ -267,7 +267,7 @@ if __name__ == "__main__":
     depth_results = run_depth_experiments()
     
     print("\n" + "="*60)
-    print("Задание 1.2: Анализ переобучения с регуляризацией")
+    print("Задание 1.2: Анализ переобучения с регуляризацией глубины")
     print("="*60)
 
-    reg_results = run_depth_with_regularization()
+    reg_results = run_depth_analysis()
